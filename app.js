@@ -32,7 +32,7 @@ function appendposts(posts, cardContainer) {
 
 //CREAZIONE DELL'HTML CHE VERRÁ AGGIUNTO 
 
-    const postCardHTML = `<div class="col-12 col-sm-6 col-lg-4">
+    const postCardHTML = `<div class="col-12 col-sm-12 col-lg-6 col-xl-4">
       <div class="card h-100">
         <div class="card-body">
           <div class="photo-placeholder" style="background-image: url('${photo}');"></div>

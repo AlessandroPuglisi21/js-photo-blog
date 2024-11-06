@@ -28,7 +28,7 @@ posts.forEach((post) => {
     const postCardHTML = `<div class="col-12 col-sm-6 col-lg-4">
       <div class="card h-100">
         <div class="card-body">
-          <div class="photo-placeholder" style="background-image: url('${photo}'); height: 300px;"></div>
+          <div class="photo-placeholder" style="background-image: url('${photo}');"></div>
           <h5 class="card-title mt-3">${title}</h5>
         </div>
       </div>

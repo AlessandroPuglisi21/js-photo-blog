@@ -36,7 +36,7 @@ function appendposts(posts, cardContainer) {
       <div class="card h-100">
         <div class="card-body">
           <div class="photo-placeholder" style="background-image: url('${photo}');"></div>
-          <h5 class="card-title mt-3">${title}</h5>
+          <h5 class="card-title mt-3 text-center fs-4">"${title}" </h5>
         </div>
       </div>
     </div>`;

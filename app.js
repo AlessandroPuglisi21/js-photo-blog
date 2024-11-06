@@ -1,29 +1,36 @@
 console.log("test");
 
+//DEFINIZIONE DI DOVE LA CARD VERRÁ AGGIUNTA IN MODO DINAMICO E URL DELL' API
 const cardContainer = document.getElementById("card-container");
 const photosURL = "https://jsonplaceholder.typicode.com/photos?_limit=6";
 
+//RICHIESTA AXIOS
 axios
   .get(photosURL)
   .then((res) => {
     //console.log(res);
-    const posts = res.data
+    const posts = res.data; //! ===> ESTRAGGO I DATI DALLA RISPOSTA API
 
-    appendposts(posts,cardContainer)
+    appendposts(posts, cardContainer); //! ===> CHIAMO UNA FUNZIONE E LE PASSO I DATI DI 'posts' CHE POII ANDRANNO NELLA 'cardContainer'
   })
   .catch((err) => {
     console.log(err);
   });
-function appendposts(posts, root){
-    //console.log(posts, root)
 
-posts.forEach((post) => {
+// CREO LA FUNZIONE
+
+function appendposts(posts, cardContainer) {
+  //console.log(posts, root)
+
+  posts.forEach((post) => {  //! ===> CREO LE ITERAZIONI PER OGNI OGGETTO NELL'ARRAY 'posts'
     //console.log(post)
-    
-    const title = post.title
-    const photo = post.url
+
+    const title = post.title;  //! ===> ESTRAZIONE DEL TITOLO E DELL'URL DELLA FOTO
+    const photo = post.url;
 
     //console.log(title, photo)
+
+//CREAZIONE DELL'HTML CHE VERRÁ AGGIUNTO 
 
     const postCardHTML = `<div class="col-12 col-sm-6 col-lg-4">
       <div class="card h-100">
@@ -34,6 +41,7 @@ posts.forEach((post) => {
       </div>
     </div>`;
 
+    // AGGIUNGO LA CARD AL CONTENITORE
     cardContainer.innerHTML += postCardHTML;
-})
+  });
 }

@@ -1,0 +1,12 @@
+nav {
+  background-image: url("/img/wall.png");
+  background-position: center;
+  background-repeat: repeat;
+}
+body{
+    background-image: url("/img/cork.png");
+    background-position: center;
+    background-repeat: repeat;
+    height:100vh; 
+  }
+  

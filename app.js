@@ -1,6 +1,6 @@
 console.log("test");
 
-//DEFINIZIONE DI DOVE LA CARD VERRÁ AGGIUNTA IN MODO DINAMICO E URL DELL' API
+//DEFINIZIONE DI DOVE LA CARD VERRÁ AGGIUNTA IN MODO DINAMICO E URL DELL'API
 const cardContainer = document.getElementById("card-container");
 const photosURL = "https://jsonplaceholder.typicode.com/photos?_limit=6";
 
@@ -36,7 +36,7 @@ function appendposts(posts, cardContainer) {
     const postCardHTML = `<div class="col-12 col-sm-12 col-lg-6 col-xl-4">
       <div class="card h-100">
         <div class="card-body">
-          <div class="photo-placeholder" style="background-image: url('${photo}');"></div>
+          <div class="photo-placeholder" id= "test" style="background-image: url('${photo}');"></div>
           <h5 class="card-title mt-3 text-center fs-4">"${title}" </h5>
         </div>
       </div>
@@ -45,12 +45,22 @@ function appendposts(posts, cardContainer) {
     // AGGIUNGO LA CARD AL CONTENITORE
     cardContainer.innerHTML += postCardHTML;
   });
+
+  // Aggiungo l'evento click alle card dopo che sono state aggiunte al DOM
+  const cards = document.querySelectorAll(".photo-placeholder"); 
+
+  cards.forEach(function(card) {
+    card.addEventListener("click", function () {
+      const overlay = document.getElementById("overlay");
+      overlay.classList.remove("d-none");
+      overlay.classList.add("d-block");
+    });
+  });
 }
 
-
 // CHIUSURA OVERLAY
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById("overlay");
 
-document.getElementById('closing-button').addEventListener('click', function(){
-    overlay.classList.add("d-none")
-})
+document.getElementById("closing-button").addEventListener("click", function () {
+  overlay.classList.add("d-none");
+});

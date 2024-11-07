@@ -2,7 +2,7 @@ console.log("test");
 
 //DEFINIZIONE DI DOVE LA CARD VERRÁ AGGIUNTA IN MODO DINAMICO E URL DELL'API
 const cardContainer = document.getElementById("card-container");
-const photosURL = "https://jsonplaceholder.typicode.com/photos?_limit=12";
+const photosURL = "https://jsonplaceholder.typicode.com/photos?_limit=6";
 
 //RICHIESTA AXIOS
 axios

@@ -33,21 +33,25 @@ function appendposts(posts, cardContainer) {
 
     //CREAZIONE DELL'HTML CHE VERRÁ AGGIUNTO
 
-    const postCardHTML = `<div class="col-12 col-sm-12 col-lg-6 col-xl-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <div class="photo-placeholder" id= "test" style="background-image: url('${photo}');"></div>
-          <h5 class="card-title mt-3 text-center fs-4">"${title}" </h5>
-        </div>
-      </div>
-    </div>`;
+    const postCardHTML = `<div class="col-12 col-sm-12 col-lg-6 col-xl-4 card-hover" style="position: relative;">
+  <div class="pin">
+    <img src="./img/pin.svg" alt="">
+  </div>
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="photo-placeholder" id="test" style="background-image: url('${photo}');"></div>
+      <h5 class="card-title mt-3 text-center fs-4">"${title}" </h5>
+    </div>
+  </div>
+</div>
+`;
 
     // AGGIUNGO LA CARD AL CONTENITORE
     cardContainer.innerHTML += postCardHTML;
   });
 
   // Aggiungo l'evento click alle card dopo che sono state aggiunte al DOM
-  const cards = document.querySelectorAll(".photo-placeholder"); 
+  const cards = document.querySelectorAll(".card-body"); 
 
   cards.forEach(function(card) {
     card.addEventListener("click", function () {

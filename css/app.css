@@ -32,3 +32,6 @@ body{
   margin-top: 2rem;
   margin-left: 50%;
 }
+.card:hover {
+  transform: scale(1.05); 
+}

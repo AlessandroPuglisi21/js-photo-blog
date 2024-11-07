@@ -22,15 +22,16 @@ axios
 function appendposts(posts, cardContainer) {
   //console.log(posts, root)
 
-  posts.forEach((post) => {  //! ===> CREO LE ITERAZIONI PER OGNI OGGETTO NELL'ARRAY 'posts'
+  posts.forEach((post) => {
+    //! ===> CREO LE ITERAZIONI PER OGNI OGGETTO NELL'ARRAY 'posts'
     //console.log(post)
 
-    const title = post.title;  //! ===> ESTRAZIONE DEL TITOLO E DELL'URL DELLA FOTO
+    const title = post.title; //! ===> ESTRAZIONE DEL TITOLO E DELL'URL DELLA FOTO
     const photo = post.url;
 
     //console.log(title, photo)
 
-//CREAZIONE DELL'HTML CHE VERRÁ AGGIUNTO 
+    //CREAZIONE DELL'HTML CHE VERRÁ AGGIUNTO
 
     const postCardHTML = `<div class="col-12 col-sm-12 col-lg-6 col-xl-4">
       <div class="card h-100">
@@ -45,3 +46,11 @@ function appendposts(posts, cardContainer) {
     cardContainer.innerHTML += postCardHTML;
   });
 }
+
+
+// CHIUSURA OVERLAY
+const overlay = document.getElementById('overlay')
+
+document.getElementById('closing-button').addEventListener('click', function(){
+    overlay.classList.add("d-none")
+})
